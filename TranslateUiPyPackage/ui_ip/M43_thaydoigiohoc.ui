@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>thaydoighlh</class>
+ <widget class="QWidget" name="thaydoighlh">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>953</width>
+    <height>637</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>13</y>
+     <width>931</width>
+     <height>611</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QLabel" name="label_13">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;BẢNG THÊM VÀ THAY ĐỔI GIỜ HỌC&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Chọn nhóm để chỉnh sửa giờ học&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QPushButton" name="locall">
+        <property name="text">
+         <string>Hiển thị toàn bộ mọi nhóm</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="locchuatkb">
+        <property name="text">
+         <string>Hiển thị các nhóm mới chưa có thời khóa biểu</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>26</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Chọn nhóm</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="nhom">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>22</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Nhóm này bao gồm các học sinh</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="hstrongnhom_view">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>22</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Thêm giờ học mới&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0" colspan="2">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Chọn buổi học cần thêm</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QComboBox" name="option_1_chonbuoihoc">
+          <item>
+           <property name="text">
+            <string>Thứ hai</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Thứ ba</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Thứ tư</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Thứ năm</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Thứ sáu</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Thứ bảy</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Chủ nhật</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>Chọn giờ học</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1" colspan="2">
+         <widget class="QTimeEdit" name="option_1_giohoc">
+          <property name="locale">
+           <locale language="English" country="UnitedStates"/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="themgiohoc">
+        <property name="maximumSize">
+         <size>
+          <width>195</width>
+          <height>28</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Thêm giờ học vào thời khóa biểu</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Xóa giờ học đã có&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Chọn id giờ học cần xóa</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="option_idxoa"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="xoagiohoc">
+        <property name="maximumSize">
+         <size>
+          <width>140</width>
+          <height>28</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Xóa giờ học</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Cập nhật giờ học cũ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0" colspan="2">
+         <widget class="QLabel" name="label_10">
+          <property name="text">
+           <string>Chọn id giờ học cần cập nhật</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QComboBox" name="option_idcapnhat"/>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>Nhập buổi học mới</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1" colspan="2">
+         <widget class="QComboBox" name="option_2_buoihoc">
+          <item>
+           <property name="text">
+            <string>Thứ hai</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Thứ ba</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Thứ tư</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Thứ năm</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Thứ sáu</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Thứ bảy</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Chủ nhật</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_12">
+          <property name="text">
+           <string>Nhập giờ học mới</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="2">
+         <widget class="QTimeEdit" name="option_2_giohoc"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="capnhatgiohoc">
+        <property name="text">
+         <string>Cập nhật giờ học</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="capnhat">
+      <property name="text">
+       <string>Cập nhật thời khóa biểu sau khi thực hiện thay đổi</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="thaydoigiohoc_view">
+      <attribute name="horizontalHeaderMinimumSectionSize">
+       <number>0</number>
+      </attribute>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderMinimumSectionSize">
+       <number>0</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>ID giờ học</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Buổi học</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Giờ học</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="hoantat">
+      <property name="text">
+       <string>Hoàn tất</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

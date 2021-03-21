@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>quanlyhocphi</class>
+ <widget class="QWidget" name="quanlyhocphi">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>412</width>
+    <height>155</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Quản lý học phí</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>399</width>
+     <height>135</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="xhpdmc">
+      <property name="text">
+       <string>Xóa / sửa học phí định mức cũ - Kiểm tra toàn bộ tình trạng học phí</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="themhpdm">
+      <property name="text">
+       <string>Thêm học phí định mức</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="gndth">
+      <property name="text">
+       <string>Ghi nhận đóng tiền học và Danh sách học phí đã thu</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="quaylai">
+      <property name="text">
+       <string>Quay lại</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

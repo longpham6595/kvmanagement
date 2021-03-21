@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>M7_thongtinlienhephuhuynh</class>
+ <widget class="QWidget" name="M7_thongtinlienhephuhuynh">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>279</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Thông tin liên hệ phụ huynh trực tuyến</string>
+  </property>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>70</y>
+     <width>246</width>
+     <height>170</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="themxoacapnhat">
+      <property name="text">
+       <string>Thêm/xóa/Cập nhật thông tin phụ huynh</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="lhhsdonle">
+      <property name="text">
+       <string>Liên hệ học sinh đơn lẻ</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="lhhstheonhom">
+      <property name="text">
+       <string>Liên hệ theo nhóm</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="lhhstheogv">
+      <property name="text">
+       <string>Liên hệ học sinh theo giáo viên giảng dạy</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="quaylai">
+      <property name="text">
+       <string>Quay lại</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

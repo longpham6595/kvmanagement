@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>qlhsPop</class>
+ <widget class="QDialog" name="qlhsPop">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>346</width>
+    <height>265</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Quản Lý Học Sinh</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>310</width>
+     <height>242</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QPushButton" name="ldd">
+        <property name="text">
+         <string>Lọc Điểm Danh</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="thsm">
+        <property name="text">
+         <string>Thêm học sinh mới</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="xoahs">
+        <property name="text">
+         <string>Xóa học sinh lỗi / cũ - Đổi tình trạng học</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="bdd">
+        <property name="text">
+         <string>Bảng thống kê điểm danh</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="tbvn">
+        <property name="text">
+         <string>Thông báo về nhà</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="dshs">
+      <property name="text">
+       <string>Danh sách toàn bộ học sinh - Thay đổi tình trạng lớp</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="quaylai">
+      <property name="text">
+       <string>Quay lại</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
