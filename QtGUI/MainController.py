@@ -12,7 +12,7 @@ import decimal
 import math
 from fractions import Fraction
 import threading
-
+import time
 
 #Sử dụng openVPN để xử lý trường hợp truy cập public
 #import fetchip
@@ -116,18 +116,19 @@ from openpyxl.utils import get_column_letter
 # Database Handler Modules
 def run_cmd(command):
     #Connect to Remote Server
-    k = paramiko.RSAKey.from_private_key_file("D:/TLDH/KVDatabase/id_rsa_server",password = "kvdatabaselockdown")
+    k = paramiko.RSAKey.from_private_key_file("D:\CodingProjects\MyManageProject\kvmanagement\id_rsa_server",password = "kvdatabaselockdown")
     
     #Đổi option key cho file cài đặt
     #k = paramiko.RSAKey.from_private_key_file("C:/Program Files (x86)/khanhvuedu/id_rsa_server",password = "kvdatabaselockdown")
     
     #Old codes used - Just for rethinking
     '''
+
     remoteComp = paramiko.SSHClient()
     remoteComp.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     print("Connecting...")
     remoteComp.connect(hostname = "192.168.2.117", username = "longpham", pkey = k)
-    print("Connected!")
+
     '''
 
 
@@ -148,9 +149,16 @@ def run_cmd(command):
         conn = pymysql.connect(host='127.0.0.1',user=sql_username,
                          passwd=sql_password,db=sql_main_database,
                          port=tunnel.local_bind_port)
+        
+        #Counter start
+        startcounter = datetime.datetime.now()
+        microsec_start = startcounter.microsecond
+
         # Check if database is connected Command - obmit if Connection establish fine at first check!!
         print('Kvdatabase connected!!!')
         cursor = conn.cursor()
+
+
 
         #Test commands establish to database!! Obmit if command establish fine!!
         cursor.execute(command)
@@ -165,8 +173,15 @@ def run_cmd(command):
             recs = list(records)
         
         cursor.close()
-        conn.close()
+        #Close ssh connection
+        #conn.close()
 
+        #Counter end and output
+        endcounter = datetime.datetime.now()
+        microsec_end = endcounter.microsecond
+        process_time = endcounter - startcounter
+        microsec_process = microsec_end - microsec_start
+        print('Connected in ',process_time ,' secs and ',microsec_process , ' microseconds!')
 
 
 
@@ -827,8 +842,12 @@ class OpWinM12_confirmnewstu(Ui_tbwthemhocsinhmoi):
 
         for row in range(0,nrow):
             for col in range(0,ncol):
-                item = str(self.tbwthemhs.item(row,col).text())
-                per_record.append(item)
+                if self.tbwthemhs.item(row,col) is None:
+                    per_record.append('')
+                else:
+                    item = str(self.tbwthemhs.item(row,col).text())
+                    per_record.append(item)
+                    
             alldata.append(per_record)
             per_record = []
             
