@@ -61,7 +61,7 @@ from M71_txcninfophuhuynh import *
 from M72_guitncanhan import *
 from M73_guitnnhom import *
 
-from splashScreen import *
+#from splashScreen import *
 
 
 
@@ -108,14 +108,34 @@ from openpyxl.utils import get_column_letter
 
 
 
+##Data loading module
+#class loading_windows(LoadingGif):
+    
+#    #Khởi tạo
+#    def setupUi(self,windows_loading):
+#        super().mainUi(windows_loading)
+#        self.ui = ()
+#        self.ui.mainUi(windows_loading)
+#        #Hiển thị view
+#        windows_loading.show()
 
-
+#    #Đóng
+#    def closeUi(self,windows_loading):
+#        super().setupUi(windows_loading)
+#        #Tắt View
+#        windows_loading.hide()
 
 
 
 
 # Database Handler Modules
 def run_cmd(command):
+    
+
+    ##Mở cửa sổ loading
+    #self.ui = loading_windows()
+    #self.ui.mainUi(windows_loading)
+    
     #Connect to Remote Server
     k = paramiko.RSAKey.from_private_key_file("D:\CodingProjects\MyManageProject\kvmanagement\id_rsa_server",password = "kvdatabaselockdown")
     
@@ -176,6 +196,8 @@ def run_cmd(command):
         cursor.close()
         #Close ssh connection
         conn.close()
+
+        #windows_loading.hide()
 
         #Counter end and output
         #endcounter = datetime.datetime.now()
@@ -260,6 +282,7 @@ class MainWinOptimized(Ui_MainWindow):
         self.ui = OpWinM7_ttphonline()
         self.ui.setupUi(window_7)
         MainWinOpt.hide()
+
 
 
 
@@ -5438,6 +5461,7 @@ if __name__ == "__main__":
     window_72 = QDialog()
     window_73 = QDialog()
 
+    #windows_loading = QDialog()
     
 
 
