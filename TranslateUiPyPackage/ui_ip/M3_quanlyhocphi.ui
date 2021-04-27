@@ -6,53 +6,73 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>412</width>
-    <height>155</height>
+    <width>345</width>
+    <height>200</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>500</width>
+    <height>400</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Quản lý học phí</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>399</width>
-     <height>135</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QPushButton" name="xhpdmc">
-      <property name="text">
-       <string>Xóa / sửa học phí định mức cũ - Kiểm tra toàn bộ tình trạng học phí</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="themhpdm">
-      <property name="text">
-       <string>Thêm học phí định mức</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="gndth">
-      <property name="text">
-       <string>Ghi nhận đóng tiền học và Danh sách học phí đã thu</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="quaylai">
-      <property name="text">
-       <string>Quay lại</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QPushButton" name="xhpdmc">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Xóa / sửa học phí định mức cũ - Kiểm tra toàn bộ tình trạng học phí</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="themhpdm">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Thêm học phí định mức</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="gndth">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Ghi nhận đóng tiền học và Danh sách học phí đã thu</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="quaylai">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Quay lại</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

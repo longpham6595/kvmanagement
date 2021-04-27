@@ -151,8 +151,8 @@ def run_cmd(command):
                          port=tunnel.local_bind_port)
         
         #Counter start
-        startcounter = datetime.datetime.now()
-        microsec_start = startcounter.microsecond
+        #startcounter = datetime.datetime.now()
+        #microsec_start = startcounter.microsecond
 
         # Check if database is connected Command - obmit if Connection establish fine at first check!!
         print('Kvdatabase connected!!!')
@@ -174,14 +174,14 @@ def run_cmd(command):
         
         cursor.close()
         #Close ssh connection
-        #conn.close()
+        conn.close()
 
         #Counter end and output
-        endcounter = datetime.datetime.now()
-        microsec_end = endcounter.microsecond
-        process_time = endcounter - startcounter
-        microsec_process = microsec_end - microsec_start
-        print('Connected in ',process_time ,' secs and ',microsec_process , ' microseconds!')
+        #endcounter = datetime.datetime.now()
+        #microsec_end = endcounter.microsecond
+        #process_time = endcounter - startcounter
+        #microsec_process = microsec_end - microsec_start
+        #print('Connected in ',process_time ,' secs and ',microsec_process , ' microseconds!')
 
 
 
@@ -867,9 +867,20 @@ class OpWinM12_confirmnewstu(Ui_tbwthemhocsinhmoi):
         for row in alldata:
             ipcmd = 'INSERT INTO dshocsinh(HoTenHS,NamSinh,NgayVaoHoc,SoDienThoai,Lop,TinhTrangHS,MaHS) VALUES('
             ipcmd += '"'+row[0]+'",'+str(row[1])+',"'+row[2][4:]+'-'+row[2][2:4]+'-'+row[2][:2]+'","'+row[3]+'",'+str(row[4])+',1,"'+row[5]+'");'
+
+            #Counter start
+            startcounter = datetime.datetime.now()
+            microsec_start = startcounter.microsecond
+
             run_cmd(ipcmd)
             print("Command Ran!!")
 
+            #Counter end and output
+            endcounter = datetime.datetime.now()
+            microsec_end = endcounter.microsecond
+            process_time = endcounter - startcounter
+            microsec_process = microsec_end - microsec_start
+            print('Connected in ',process_time ,' secs and ',microsec_process , ' microseconds!')
 
 
 

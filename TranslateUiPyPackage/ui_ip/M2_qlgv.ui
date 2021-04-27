@@ -6,60 +6,92 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>242</width>
-    <height>192</height>
+    <width>300</width>
+    <height>300</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>500</width>
+    <height>400</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>11</x>
-     <y>12</y>
-     <width>219</width>
-     <height>170</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QPushButton" name="dsgv">
-      <property name="text">
-       <string>Danh sách giáo viên</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="themgiaovien">
-      <property name="text">
-       <string>Thêm giáo viên</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="cnpcmn">
-      <property name="text">
-       <string>Cập nhật và xóa phân công môn học</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="xoagv">
-      <property name="text">
-       <string>Xóa giáo viên</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="quaylai">
-      <property name="text">
-       <string>Quay lại</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QPushButton" name="dsgv">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Danh sách giáo viên</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="themgiaovien">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Thêm giáo viên</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="cnpcmn">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Cập nhật và xóa phân công môn học</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="xoagv">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Xóa giáo viên</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="quaylai">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Quay lại</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

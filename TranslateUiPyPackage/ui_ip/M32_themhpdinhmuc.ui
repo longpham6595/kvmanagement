@@ -6,118 +6,114 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1121</width>
-    <height>649</height>
+    <width>828</width>
+    <height>298</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Thêm ID học phí</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>11</x>
-     <y>10</y>
-     <width>1101</width>
-     <height>631</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLabel" name="label_2">
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Số học sinh cần thêm</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QSpinBox" name="sohs">
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QPushButton" name="xacnhan">
+     <property name="text">
+      <string>Xác nhận thêm ID</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="3">
+    <widget class="QTableWidget" name="themidhp_view">
+     <property name="minimumSize">
+      <size>
+       <width>810</width>
+       <height>200</height>
+      </size>
+     </property>
+     <column>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;THÊM ID HỌC PHÍ MỚI&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>ID Học phí mới</string>
       </property>
-     </widget>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>Số học sinh cần thêm</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QSpinBox" name="sohs"/>
-      </item>
-      <item>
-       <widget class="QPushButton" name="xacnhan">
-        <property name="text">
-         <string>Xác nhận thêm ID</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="QTableWidget" name="themidhp_view">
-      <column>
-       <property name="text">
-        <string>ID Học phí mới</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Mã học sinh</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Họ tên học sinh</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Mã môn học</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Tên môn học</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Học phí</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Mã giáo viên</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Họ tên giáo viên</string>
-       </property>
-      </column>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="updatetableinfo">
+     </column>
+     <column>
       <property name="text">
-       <string>Cập nhật họ tên học sinh và họ tên giáo viên và tên môn học</string>
+       <string>Mã học sinh</string>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="updateintodb">
+     </column>
+     <column>
       <property name="text">
-       <string>Cập nhật vào cơ sở dữ liệu</string>
+       <string>Họ tên học sinh</string>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="hoantat">
+     </column>
+     <column>
       <property name="text">
-       <string>Hoàn tất</string>
+       <string>Mã môn học</string>
       </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+     </column>
+     <column>
+      <property name="text">
+       <string>Tên môn học</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Học phí</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Mã giáo viên</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Họ tên giáo viên</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="3">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;THÊM ID HỌC PHÍ MỚI&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QPushButton" name="updatetableinfo">
+     <property name="text">
+      <string>Cập nhật họ tên học sinh và họ tên giáo viên và tên môn học</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QPushButton" name="updateintodb">
+     <property name="text">
+      <string>Cập nhật vào cơ sở dữ liệu</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <widget class="QPushButton" name="hoantat">
+     <property name="text">
+      <string>Hoàn tất</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

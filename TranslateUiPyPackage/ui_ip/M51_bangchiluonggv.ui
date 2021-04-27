@@ -6,163 +6,147 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1041</width>
-    <height>531</height>
+    <width>833</width>
+    <height>347</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Bảng chi lương giáo viên</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>11</x>
-     <y>11</y>
-     <width>1021</width>
-     <height>511</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLabel" name="label_3">
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="6" column="0" colspan="6">
+    <widget class="QTableWidget" name="payment_view">
+     <property name="minimumSize">
+      <size>
+       <width>815</width>
+       <height>200</height>
+      </size>
+     </property>
+     <column>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;BẢNG CHI LƯƠNG GIÁO VIÊN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>Mã giáo viên</string>
       </property>
-     </widget>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>Chọn tháng</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QSpinBox" name="thang">
-        <property name="minimum">
-         <number>1</number>
-        </property>
-        <property name="maximum">
-         <number>12</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Chọn năm</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QSpinBox" name="nam">
-        <property name="minimum">
-         <number>2000</number>
-        </property>
-        <property name="maximum">
-         <number>3000</number>
-        </property>
-        <property name="value">
-         <number>2020</number>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QRadioButton" name="locoption">
-        <property name="text">
-         <string>Lọc theo mã giáo viên dưới đây</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="locall">
-        <property name="text">
-         <string>Hiển thị tất cả giáo viên</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
-      <item>
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>Chọn mã giáo viên</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="magv"/>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="QPushButton" name="loc">
+     </column>
+     <column>
       <property name="text">
-       <string>Lọc</string>
+       <string>Tên giáo viên</string>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QTableWidget" name="payment_view">
-      <column>
-       <property name="text">
-        <string>Mã giáo viên</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Tên giáo viên</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Hệ số lương</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Lương theo hệ số</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Lương cứng</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Tổng thu nhập</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Lương đã ứng</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Lương tích lũy</string>
-       </property>
-      </column>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="hoantat">
+     </column>
+     <column>
       <property name="text">
-       <string>Hoàn tất</string>
+       <string>Hệ số lương</string>
       </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+     </column>
+     <column>
+      <property name="text">
+       <string>Lương theo hệ số</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Lương cứng</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Tổng thu nhập</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Lương đã ứng</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Lương tích lũy</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="5">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;BẢNG CHI LƯƠNG GIÁO VIÊN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Chọn tháng</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QSpinBox" name="thang">
+     <property name="minimum">
+      <number>1</number>
+     </property>
+     <property name="maximum">
+      <number>12</number>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Chọn năm</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <widget class="QSpinBox" name="nam">
+     <property name="minimum">
+      <number>2000</number>
+     </property>
+     <property name="maximum">
+      <number>3000</number>
+     </property>
+     <property name="value">
+      <number>2020</number>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="6">
+    <widget class="QPushButton" name="loc">
+     <property name="text">
+      <string>Lọc</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="5">
+    <widget class="QComboBox" name="magv"/>
+   </item>
+   <item row="1" column="4">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Chọn mã giáo viên</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QRadioButton" name="locoption">
+     <property name="text">
+      <string>Lọc theo mã giáo viên dưới đây</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <widget class="QRadioButton" name="locall">
+     <property name="text">
+      <string>Hiển thị tất cả giáo viên</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0" colspan="6">
+    <widget class="QPushButton" name="hoantat">
+     <property name="text">
+      <string>Hoàn tất</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

@@ -6,74 +6,112 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>228</width>
-    <height>257</height>
+    <width>300</width>
+    <height>300</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>500</width>
+    <height>400</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>207</width>
-     <height>240</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QPushButton" name="bclgv">
-      <property name="text">
-       <string>Bảng chi lương giáo viên</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="capnhatthongtin">
-      <property name="text">
-       <string>Cập nhật thông tin lương giáo viên</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="chiluonggv">
-      <property name="text">
-       <string>Chi lương giáo viên</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="lr">
-      <property name="text">
-       <string>Lãi ròng</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="bctq">
-      <property name="text">
-       <string>Báo cáo tổng quan</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="bccptt">
-      <property name="text">
-       <string>Báo cáo chi phí tổng thể</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="quaylai">
-      <property name="text">
-       <string>Quay lại</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QPushButton" name="bclgv">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Bảng chi lương giáo viên</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="capnhatthongtin">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Cập nhật thông tin lương giáo viên</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="chiluonggv">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Chi lương giáo viên</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="lr">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Lãi ròng</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="bctq">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Báo cáo tổng quan</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="bccptt">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Báo cáo chi phí tổng thể</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="quaylai">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Quay lại</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

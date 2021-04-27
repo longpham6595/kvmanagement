@@ -6,415 +6,424 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1161</width>
-    <height>721</height>
+    <width>1050</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Lọc Điểm Danh</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>1141</width>
-     <height>701</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QLabel" name="lop">
-        <property name="minimumSize">
-         <size>
-          <width>55</width>
-          <height>0</height>
-         </size>
-        </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="lop">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>55</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Lớp (0 hiển thị toàn bộ)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="combo_lop">
+       <property name="currentText">
+        <string>0</string>
+       </property>
+       <item>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Lớp (0 hiển thị toàn bộ)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="combo_lop">
-        <property name="currentText">
          <string>0</string>
         </property>
-        <item>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>1</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>2</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>3</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>4</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>5</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>6</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>7</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>8</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>9</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>10</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>11</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>12</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="giaovien">
-        <property name="minimumSize">
-         <size>
-          <width>55</width>
-          <height>0</height>
-         </size>
-        </property>
+       </item>
+       <item>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Giáo Viên&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>1</string>
         </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="combo_giaovien"/>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QLabel" name="nhom">
-        <property name="minimumSize">
-         <size>
-          <width>55</width>
-          <height>0</height>
-         </size>
-        </property>
+       </item>
+       <item>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Nhóm&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>2</string>
         </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="combo_nhom">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLabel" name="buoihoc">
-        <property name="minimumSize">
-         <size>
-          <width>55</width>
-          <height>0</height>
-         </size>
-        </property>
+       </item>
+       <item>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Buổi học (Chọn 0 khi lọc toàn bộ)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>3</string>
         </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="combo_buoihoc">
-        <item>
-         <property name="text">
-          <string>0</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Thứ hai</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Thứ ba</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Thứ tư</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Thứ năm</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Thứ sáu</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Thứ bảy</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Chủ nhật</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_5">
+       </item>
+       <item>
         <property name="text">
-         <string>Ngày điểm danh (dd/mm/yyyy)</string>
+         <string>4</string>
         </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QDateEdit" name="ngaydd">
-        <property name="dateTime">
-         <datetime>
-          <hour>0</hour>
-          <minute>0</minute>
-          <second>0</second>
-          <year>2020</year>
-          <month>1</month>
-          <day>1</day>
-         </datetime>
-        </property>
-        <property name="displayFormat">
-         <string>dd/M/yyyy</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="label">
+       </item>
+       <item>
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Giờ học (24 giờ) (Chọn 0:0 khi lọc toàn bộ)&lt;br/&gt;Chọn giờ sớm hơn giờ bắt đầu nhóm để hiện nhóm&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>5</string>
         </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QSpinBox" name="giohoc">
-        <property name="maximum">
-         <number>24</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_2">
+       </item>
+       <item>
         <property name="text">
-         <string>h</string>
+         <string>6</string>
         </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QSpinBox" name="phuthoc">
-        <property name="maximum">
-         <number>60</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_3">
+       </item>
+       <item>
         <property name="text">
-         <string>phút</string>
+         <string>7</string>
         </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3"/>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_6">
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_5">
-        <item>
-         <widget class="QLabel" name="label_6">
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Lọc để xóa điểm danh nhầm (lọc theo ngày điểm danh được chọn)&lt;/p&gt;&lt;p&gt;(Chọn để lọc xóa điểm danh ghi nhầm, không chọn để lọc điểm danh)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QCheckBox" name="cb_xoadiemdanh">
-          <property name="text">
-           <string>Lọc điểm danh nhầm</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_4">
-        <item>
-         <widget class="QLabel" name="label_7">
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Chọn các ID Điểm danh nhầm&lt;/p&gt;&lt;p&gt;(nhập cách nhau bởi dấu phẩy - &amp;quot;,&amp;quot;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="ipidxoa"/>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="QPushButton" name="loc">
+       </item>
+       <item>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>10</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>11</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>12</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="giaovien">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>55</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Giáo Viên&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="combo_giaovien"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="nhom">
+       <property name="minimumSize">
+        <size>
+         <width>55</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Nhóm&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="combo_nhom">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="buoihoc">
+       <property name="minimumSize">
+        <size>
+         <width>55</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Buổi học (Chọn 0 khi lọc toàn bộ)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="combo_buoihoc">
+       <item>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Thứ hai</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Thứ ba</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Thứ tư</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Thứ năm</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Thứ sáu</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Thứ bảy</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Chủ nhật</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Ngày điểm danh (dd/mm/yyyy)</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDateEdit" name="ngaydd">
+       <property name="dateTime">
+        <datetime>
+         <hour>0</hour>
+         <minute>0</minute>
+         <second>0</second>
+         <year>2020</year>
+         <month>1</month>
+         <day>1</day>
+        </datetime>
+       </property>
+       <property name="displayFormat">
+        <string>dd/M/yyyy</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Giờ học (24 giờ) (Chọn 0:0 khi lọc toàn bộ)&lt;br/&gt;Chọn giờ sớm hơn giờ bắt đầu nhóm để hiện nhóm&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="giohoc">
+       <property name="maximum">
+        <number>24</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>h</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="phuthoc">
+       <property name="maximum">
+        <number>60</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>phút</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Lọc để xóa điểm danh nhầm (lọc theo ngày điểm danh được chọn)&lt;/p&gt;&lt;p&gt;(Chọn để lọc xóa điểm danh ghi nhầm, không chọn để lọc điểm danh)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="cb_xoadiemdanh">
+       <property name="text">
+        <string>Lọc điểm danh nhầm</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Chọn các ID Điểm danh nhầm&lt;/p&gt;&lt;p&gt;(nhập cách nhau bởi dấu phẩy - &amp;quot;,&amp;quot;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="ipidxoa"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPushButton" name="loc">
+     <property name="text">
+      <string>Lọc</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTableWidget" name="diemdanh_view">
+     <column>
       <property name="text">
-       <string>Lọc</string>
+       <string>Mã HS</string>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QTableWidget" name="diemdanh_view">
-      <column>
-       <property name="text">
-        <string>Mã HS</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Họ tên</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Nhóm</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Buổi học TKB</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Ngày điểm danh</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Thứ điểm danh</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Giờ bắt đầu</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>GV phụ trách</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Điểm danh</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>ID Điểm danh</string>
-       </property>
-      </column>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_4">
+     </column>
+     <column>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Chờ lọc??&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>Họ tên</string>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="xndiemdanh">
+     </column>
+     <column>
       <property name="text">
-       <string>Xác nhận điểm danh</string>
+       <string>Nhóm</string>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_8">
+     </column>
+     <column>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;Chỉ xác nhận điểm danh khi Buổi học TKB và Thứ điểm danh TRÙNG NHAU&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>Buổi học TKB</string>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="xoadiemdanh">
+     </column>
+     <column>
       <property name="text">
-       <string>Xóa điểm danh nhầm</string>
+       <string>Ngày điểm danh</string>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="hoantat">
+     </column>
+     <column>
       <property name="text">
-       <string>Hoàn tất</string>
+       <string>Thứ điểm danh</string>
       </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+     </column>
+     <column>
+      <property name="text">
+       <string>Giờ bắt đầu</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>GV phụ trách</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Điểm danh</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>ID Điểm danh</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_4">
+     <property name="maximumSize">
+      <size>
+       <width>1600</width>
+       <height>1000</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Chờ lọc??&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="xndiemdanh">
+     <property name="text">
+      <string>Xác nhận điểm danh</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; font-style:italic;&quot;&gt;Chỉ xác nhận điểm danh khi Buổi học TKB và Thứ điểm danh TRÙNG NHAU&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="xoadiemdanh">
+     <property name="text">
+      <string>Xóa điểm danh nhầm</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="hoantat">
+     <property name="text">
+      <string>Hoàn tất</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

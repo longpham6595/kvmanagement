@@ -6,191 +6,159 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>925</width>
-    <height>776</height>
+    <width>718</width>
+    <height>350</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>350</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Thêm/Xóa/Cập nhật thông tin online của phụ huynh</string>
   </property>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>8</x>
-     <y>9</y>
-     <width>911</width>
-     <height>761</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_5">
-    <item>
-     <widget class="QLabel" name="label">
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Chọn lớp</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QSpinBox" name="lop">
+     <property name="maximum">
+      <number>12</number>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Chọn nhóm</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3" colspan="3">
+    <widget class="QComboBox" name="nhom"/>
+   </item>
+   <item row="7" column="0" colspan="10">
+    <widget class="QTableWidget" name="viewinfo">
+     <column>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;THÊM/XÓA/CẬP NHẬT THÔNG TIN PHỤ HUYNH&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>Mã học sinh</string>
       </property>
-     </widget>
-    </item>
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_4">
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QLabel" name="label_4">
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Xem và cập nhật thông tin phụ huynh&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <widget class="QLabel" name="label_3">
-            <property name="text">
-             <string>Chọn lớp</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QSpinBox" name="lop">
-            <property name="maximum">
-             <number>12</number>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_2">
-            <property name="text">
-             <string>Chọn nhóm</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QComboBox" name="nhom"/>
-          </item>
-          <item>
-           <widget class="QPushButton" name="loc">
-            <property name="text">
-             <string>Lọc</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <widget class="QLabel" name="label_5">
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Thêm thông tin phụ huynh học sinh&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
-           <widget class="QLabel" name="label_6">
-            <property name="text">
-             <string>Chọn số lượng học sinh cần thêm thông tin</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QSpinBox" name="numinfoadd"/>
-          </item>
-          <item>
-           <widget class="QPushButton" name="lapbangthem">
-            <property name="text">
-             <string>Lập bảng thêm thông tin</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="capnhat">
-            <property name="text">
-             <string>Cập nhật họ tên HS khi thêm</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="but_theminfo">
-            <property name="text">
-             <string>Tiến hành thêm thông tin</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
-        <item>
-         <widget class="QLabel" name="label_7">
-          <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Xóa thông tin phụ huynh&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <item>
-           <widget class="QLabel" name="label_8">
-            <property name="text">
-             <string>Chọn mã học sinh cần xóa thông tin</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QComboBox" name="mahsdelinfoph"/>
-          </item>
-          <item>
-           <widget class="QPushButton" name="delinfo">
-            <property name="text">
-             <string>Xóa thông tin PHHS</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="QTableWidget" name="viewinfo">
-      <column>
-       <property name="text">
-        <string>Mã học sinh</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Họ Tên HS</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>FB account IDs</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Messenger IDs</string>
-       </property>
-      </column>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="quaylai">
+     </column>
+     <column>
       <property name="text">
-       <string>Quay lại</string>
+       <string>Họ Tên HS</string>
       </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+     </column>
+     <column>
+      <property name="text">
+       <string>FB account IDs</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Messenger IDs</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="3">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>Chọn số lượng học sinh cần thêm thông tin</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="3">
+    <widget class="QSpinBox" name="numinfoadd"/>
+   </item>
+   <item row="4" column="4" colspan="2">
+    <widget class="QPushButton" name="lapbangthem">
+     <property name="text">
+      <string>Lập bảng thêm thông tin</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="6" colspan="2">
+    <widget class="QPushButton" name="capnhat">
+     <property name="text">
+      <string>Cập nhật họ tên HS khi thêm</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="8" colspan="2">
+    <widget class="QPushButton" name="but_theminfo">
+     <property name="text">
+      <string>Tiến hành thêm thông tin</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="7" colspan="3">
+    <widget class="QPushButton" name="delinfo">
+     <property name="text">
+      <string>Xóa thông tin PHHS</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0" colspan="2">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Chọn mã học sinh cần xóa thông tin</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="2" colspan="5">
+    <widget class="QComboBox" name="mahsdelinfoph"/>
+   </item>
+   <item row="2" column="6" colspan="4">
+    <widget class="QPushButton" name="loc">
+     <property name="text">
+      <string>Lọc</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="10">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;THÊM/XÓA/CẬP NHẬT THÔNG TIN PHỤ HUYNH&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="10">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Xem và cập nhật thông tin phụ huynh&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="10">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Thêm thông tin phụ huynh học sinh&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="10">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Xóa thông tin phụ huynh&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0" colspan="10">
+    <widget class="QPushButton" name="quaylai">
+     <property name="text">
+      <string>Quay lại</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>
