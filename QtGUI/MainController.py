@@ -61,6 +61,7 @@ from M71_txcninfophuhuynh import *
 from M72_guitncanhan import *
 from M73_guitnnhom import *
 
+from splashScreen import *
 
 
 
