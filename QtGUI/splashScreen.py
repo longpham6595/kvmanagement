@@ -1,33 +1,36 @@
 import sys
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtGui import QMovie
 from PyQt5.QtCore import Qt
-  
-  
+from PyQt5.QtWidgets import * 
+from PyQt5.QtGui import * 
+from PyQt5.QtCore import *
+
+
 class LoadingGif(object):
-  
+
     def mainUI(self, FrontWindow):
         FrontWindow.setObjectName("FTwindow")
-        FrontWindow.resize(320, 300)
-        self.centralwidget = QtWidgets.QWidget(FrontWindow)
+        FrontWindow.resize(340, 60)
+        self.centralwidget = QWidget(FrontWindow)
         self.centralwidget.setObjectName("main-widget")
-  
+        
+
+
+
         # Label Create
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(25, 25, 200, 200))
-        self.label.setMinimumSize(QtCore.QSize(250, 250))
-        self.label.setMaximumSize(QtCore.QSize(250, 250))
+        self.label = QLabel(self.centralwidget)
+        self.label.setGeometry(QRect(68, 20, 20, 20))
+        self.label.setMinimumSize(QSize(250, 25))
+        self.label.setMaximumSize(QSize(250, 25))
         self.label.setObjectName("lb1")
         FrontWindow.setCentralWidget(self.centralwidget)
   
         # Loading the GIF
-        self.movie = QMovie("D:\CodingProjects\MyManageProject\kvmanagement\LOADING\Spinner-1s-200px.gif")
+        self.movie = QMovie("D:\CodingProjects\MyManageProject\kvmanagement\QtGUI\good.gif")
         self.label.setMovie(self.movie)
   
         self.startAnimation()
   
     # Start Animation
-  
     def startAnimation(self):
         self.movie.start()
   
@@ -35,10 +38,13 @@ class LoadingGif(object):
     def stopAnimation(self):
         self.movie.stop()
   
-  
-app = QtWidgets.QApplication(sys.argv)
-window = QtWidgets.QMainWindow()
-demo = LoadingGif()
-demo.mainUI(window)
-window.show()
-sys.exit(app.exec_())
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = QMainWindow()
+    demo = LoadingGif()
+    demo.mainUI(window)
+    window.setWindowTitle("LOADING .. PLEASE WAIT ..")
+    window.show()
+    sys.exit(app.exec_())
