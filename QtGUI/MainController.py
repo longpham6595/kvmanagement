@@ -1,4 +1,4 @@
-import sys
+import traceback, sys
 from PyQt5 import QtGui
 from PyQt5 import QtCore
 #from PyQt5.QtWidgets import (QApplication, QMainWindow, QPushButton, 
@@ -152,11 +152,7 @@ from openpyxl.utils import get_column_letter
 
 
 
-#Class dùng Windows_loading
-class OpenLoading(LoadingGif):
 
-    def setupUi(self,windows_loading):
-        super().mainUI(windows_loading)
 
 
 
@@ -271,12 +267,22 @@ class OpenLoading(LoadingGif):
 
 
 
+# Định hướng xử dụng multiprocess để xử lý 
 
 
 
 
 
 
+#Class dùng Windows_loading
+class OpenLoading(LoadingGif):
+
+    def setupUi(self,window_loading):
+        super().mainUI(window_loading)
+
+        #Đánh dấu mở window loading
+        global asassigned_window_loading
+        assigned_window_loading = True
 
 
 # Database Handler Modules OldVersion
@@ -342,6 +348,7 @@ def run_cmd(command):
         cursor.close()
         #Close ssh connection
         conn.close()
+
 
         #Counter end and output
         #endcounter = datetime.datetime.now()
@@ -571,17 +578,14 @@ class OpWinM11_confirmldd(Ui_locdiemdanh):
     def __init__(self):
         #Def Translate variable
         _translate = QtCore.QCoreApplication.translate
-        #Tạo threadpool
-        #self.threadpool = QThreadPool()
+        
 
         #Khởi tạo danh sách giáo viên
         cmd_dsgv = 'SELECT * FROM dsgiaovien;'
-        #Tạo thread
-        #worker = Worker.run_cmd(cmd_dsgv)
-        #Chạy thread 
-        #self.threadpool.start(worker)
-
         run_cmd(cmd_dsgv)
+        
+
+
         self.dsgv = ['0',]
         for row in recs:
             self.dsgv.append(row[0]+' - '+row[1])
@@ -5822,7 +5826,7 @@ if __name__ == "__main__":
     window_72 = QDialog()
     window_73 = QDialog()
 
-    windows_loading = QDialog()
+    window_loading = QMainWindow()
     
 
 
