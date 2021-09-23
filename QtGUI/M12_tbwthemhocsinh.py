@@ -121,11 +121,11 @@ class Ui_tbwthemhocsinhmoi(object):
         self.hoantat.setText(_translate("tbwthemhocsinhmoi", "Hoàn tất"))
 
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    tbwthemhocsinhmoi = QtWidgets.QDialog()
-    ui = Ui_tbwthemhocsinhmoi()
-    ui.setupUi(tbwthemhocsinhmoi)
-    tbwthemhocsinhmoi.show()
-    sys.exit(app.exec_())
+#if __name__ == "__main__":
+#    import sys
+#    app = QtWidgets.QApplication(sys.argv)
+#    tbwthemhocsinhmoi = QtWidgets.QDialog()
+#    ui = Ui_tbwthemhocsinhmoi()
+#    ui.setupUi(tbwthemhocsinhmoi)
+#    tbwthemhocsinhmoi.show()
+#    sys.exit(app.exec_())

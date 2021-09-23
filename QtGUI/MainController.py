@@ -1,6 +1,7 @@
 import traceback, sys
 from PyQt5 import QtGui
 from PyQt5 import QtCore
+from PyQt5 import QtWidgets
 #from PyQt5.QtWidgets import (QApplication, QMainWindow, QPushButton, 
 #                             QToolTip, QMessageBox, QLabel,QDialog,QTableWidget,QTableWidgetItem,
 #                             QHeaderView)
@@ -94,6 +95,8 @@ from os.path import expanduser
 from openpyxl import Workbook
 from openpyxl.utils import get_column_letter
 
+#Import for multiprocessing
+from multiprocessing import *
 
 
 
@@ -105,8 +108,6 @@ from openpyxl.utils import get_column_letter
 
 
 
-
-#Memory crash solution
 
 
 
@@ -267,7 +268,6 @@ from openpyxl.utils import get_column_letter
 
 
 
-# Định hướng xử dụng multiprocess để xử lý 
 
 
 
@@ -281,8 +281,23 @@ class OpenLoading(LoadingGif):
         super().mainUI(window_loading)
 
         #Đánh dấu mở window loading
-        global asassigned_window_loading
+        global assigned_window_loading
         assigned_window_loading = True
+    
+    def view_loading():
+        global assigned_window_loading
+        if assigned_window_loading:
+            window_loading.show()
+        else:
+            self.ui = OpenLoading()
+            self.ui.setupUi(window_loading)
+
+    def hide_loading():
+        window_loading.hide()
+
+
+#Def chạy show windows_loading
+
 
 
 # Database Handler Modules OldVersion
@@ -295,14 +310,14 @@ def run_cmd(command):
     #k = paramiko.RSAKey.from_private_key_file("C:/Program Files (x86)/khanhvuedu/id_rsa_server",password = "kvdatabaselockdown")
     
     #Old codes used - Just for rethinking
-    '''
+    
 
-    remoteComp = paramiko.SSHClient()
-    remoteComp.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    print("Connecting...")
-    remoteComp.connect(hostname = "192.168.2.117", username = "longpham", pkey = k)
+    #remoteComp = paramiko.SSHClient()
+    #remoteComp.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    #print("Connecting...")
+    #remoteComp.connect(hostname = "192.168.2.117", username = "longpham", pkey = k)
 
-    '''
+    
 
 
     sql_hostname = '127.0.0.1'
@@ -337,7 +352,7 @@ def run_cmd(command):
         cursor.execute(command)
         if (command.find("SELECT")==-1): 
             conn.commit()
-        if (command.find("SELECT") != -1):
+        elif (command.find("SELECT") != -1):
             records = cursor.fetchall()
         
             #Output dữ liệu vào biến toàn cục recs, type list
@@ -345,10 +360,15 @@ def run_cmd(command):
             recs = []
             recs = list(records)
         
+        #print("So thread dang chay: {}".format(threading.active_count()))
+
         cursor.close()
+
         #Close ssh connection
         conn.close()
 
+        #Thông báo đóng connection
+        print("Connection closed!!!")
 
         #Counter end and output
         #endcounter = datetime.datetime.now()
@@ -416,73 +436,83 @@ class MainWinOptimized(Ui_MainWindow):
 
     #Open Window 1 - Cửa sổ quản lý học sinh
     def Open_qlhsPop(self):
-        global assigned_window_1
-        if assigned_window_1:
-            #print("Running IF!!!")
-            window_1.show()
-        else:
-            #print("Running ELSE!!!")
-            self.ui = OpWinM1_qlhs()
-            self.ui.setupUi(window_1)
+        global ui
+        global window_1
+        
+        window_1 = QDialog()
+        ui = OpWinM1_qlhs()
+        ui.setupUi(window_1)
         MainWinOpt.hide()
-
    
     #Open Window 2 - Cửa sổ quản lý giáo viên
     def Open_themgv(self):
-        if assigned_window_2:
-            window_2.show()
-        else:
-            self.ui = OpWinM2_qlgv()
-            self.ui.setupUi(window_2)
+        global ui
+        global window_2
+
+        window_2 = QDialog()
+        ui = OpWinM2_qlgv()
+        ui.setupUi(window_2)
         MainWinOpt.hide()
+        
 
     #Open Window 3 - Cửa sổ quản lý học phí
     def Open_qlhp(self):
-        if assigned_window_3:
-            window_3.show()
-        else:
-            self.ui = OpWinM3_qlhp()
-            self.ui.setupUi(window_3)
+
+        global ui
+        global window_3
+        
+        window_3 = QDialog()
+        ui = OpWinM3_qlhp()
+        ui.setupUi(window_3)
         MainWinOpt.hide()
+
 
     #Open Window 4 - Cửa sổ phân môn nhóm và thời khóa biểu
     def Open_pmntkb(self):
-        if assigned_window_4:
-            window_4.show()
-        else: 
-            self.ui = OpWinM4_pmntkb()
-            self.ui.setupUi(window_4)
-        MainWinOpt.hide()
 
+        global ui
+        global window_4
+        
+        window_4 = QDialog()
+        ui = OpWinM4_pmntkb()
+        ui.setupUi(window_4)
+        MainWinOpt.hide()
 
     #Open Window 5 - Cửa sổ phân tích lợi nhuận
     def Open_ptln(self):
-        if assigned_window_5:
-            window_5.show()
-        else:
-            self.ui = OpWinM5_ptln()
-            self.ui.setupUi(window_5)
+
+        global ui
+        global window_5
+        
+        window_5 = QDialog()
+        ui = OpWinM5_ptln()
+        ui.setupUi(window_5)
         MainWinOpt.hide()
+
+
 
     #Open Window 6 - Cửa sổ quản lý bài học và giờ học
     def Open_qlbhgh(self):
-        if assigned_window_6:
-            window_6.show()
-        else:
-            self.ui = OpWinM6_qlbhgh()
-            self.ui.setupUi(window_6)
+
+        global ui
+        global window_6
+        
+        window_6 = QDialog()
+        ui = OpWinM6_qlbhgh()
+        ui.setupUi(window_6)
         MainWinOpt.hide()
+
 
     #Open Window 7 - Cửa sổ quản lý thông tin và liên hệ phụ huynh online
     def Open_ttlhph(self):
-        if assigned_window_7:
-            window_7.show()
-        else:
-            self.ui = OpWinM7_ttphonline()
-            self.ui.setupUi(window_7)
+
+        global ui
+        global window_7
+        
+        window_7 = QDialog()
+        ui = OpWinM7_ttphonline()
+        ui.setupUi(window_7)
         MainWinOpt.hide()
-
-
 
 
 
@@ -497,58 +527,76 @@ class MainWinOptimized(Ui_MainWindow):
 # Window 1 - Dialog quản lý học sinh
 class OpWinM1_qlhs(Ui_qlhsPop):
 
-    # Open Window 1-1 - Dialog lọc để điểm danh
-    def Open_locdiemdanhPop(self):
-        if assigned_window_11: 
-            window_11.show()
-        else:
-            self.ui = OpWinM11_confirmldd()
-            self.ui.setupUi(window_11)
-        window_1.hide()
-
     # Def nút quay lại
     def ql(self):
+        global ui
+        global MainWinOpt
+        global window_1
+        
+        MainWinOpt = QMainWindow()
+        ui = MainWinOptimized()
+        ui.setupUi(MainWinOpt)
         MainWinOpt.show()
         window_1.hide()
 
-    # Open Window 1-2 - Dialog chọn số học sinh thêm mới
-    def Open_sohsthemmoi(self):
-        if assigned_window_12: 
-            window_12.show()
-        else:
-            self.ui = OpWinM12_confirmnewstu()
-            self.ui.setupUi(window_12)
+
+    # Open Window 1-1 - Dialog lọc để điểm danh
+    def Open_locdiemdanhPop(self):
+
+        global window_11
+        global ui
+        global window_1 
+
+        window_11 = QDialog()
+        ui = OpWinM11_confirmldd()
+        ui.setupUi(window_11)
         window_1.hide()
 
+    
+    # Open Window 1-2 - Dialog chọn số học sinh thêm mới
+    def Open_sohsthemmoi(self):
+        global ui
+        global window_12
+        global window_1
+
+        window_12 = QDialog()
+        ui = OpWinM12_confirmnewstu()
+        ui.setupUi(window_12)
+        window_1.hide()
+        
     # Open Window 1-3 - Dialog xóa học sinh đã nghỉ
     def Open_xoahs(self):
-        if assigned_window_13:
-            window_13.show()
-        else:
-            self.ui = OpWinM13_xoahocsinh()
-            self.ui.setupUi(window_13)
+        global window_13
+        global ui
+        global window_1
+
+        window_13 = QDialog()
+        ui = OpWinM13_xoahocsinh()
+        ui.setupUi(window_13)
         window_1.hide()
 
 
     # Open Window 1-4 - Dialog thống kê điểm danh học sinh
     def Open_tkddhs(self):
-        if assigned_window_14:
-            window_14.show()
-        else:
-            self.ui = OpWinM14_thongkediemdanh()
-            self.ui.setupUi(window_14)
+        global window_14 
+        global ui
+        global window_1
+
+        window_14 = QDialog()
+        ui = OpWinM14_thongkediemdanh()
+        ui.setupUi(window_14)
         window_1.hide()
 
     #Open Window 1-6 - Dialog danh sách học sinh
     def Open_dshs(self):
-        if assigned_window_16:
-            window_16.show()
-        else:
-            self.ui = OpWinM16_danhsachhocsinh()
-            self.ui.setupUi(window_16)
+        global window_16
+        global window_1
+        global ui
+
+        window_16 = QDialog()
+        ui = OpWinM16_danhsachhocsinh()
+        ui.setupUi(window_16)
         window_1.hide()
-
-
 
     #Khởi tạo
     def setupUi(self,window_1):
@@ -566,25 +614,26 @@ class OpWinM1_qlhs(Ui_qlhsPop):
 
         self.quaylai.clicked.connect(self.ql)
 
+
         #Show current defined window
         window_1.show()
-        #Đánh dấu đã mở windows 1 lần đầu
-        global assigned_window_1 
-        assigned_window_1 += 1
+
 
 
 #Window 1-1 - Dialog lọc để điểm danh
 class OpWinM11_confirmldd(Ui_locdiemdanh):
     def __init__(self):
+        
         #Def Translate variable
         _translate = QtCore.QCoreApplication.translate
         
 
+        #Test thử chạy song song 2 tiến trình
+
+
         #Khởi tạo danh sách giáo viên
         cmd_dsgv = 'SELECT * FROM dsgiaovien;'
         run_cmd(cmd_dsgv)
-        
-
 
         self.dsgv = ['0',]
         for row in recs:
@@ -611,7 +660,8 @@ class OpWinM11_confirmldd(Ui_locdiemdanh):
         #    print(row)
 
         
-
+ 
+        
 
     #Khởi tạo chính
     def setupUi(self,window_11):
@@ -620,11 +670,9 @@ class OpWinM11_confirmldd(Ui_locdiemdanh):
 
         #Show current defined window
         window_11.show()
-        #Đánh dấu đã mở window_11 lần đầu
-        global assigned_window_11
-        assigned_window_11 = True
 
-        #Up dữ liệu lên combobox
+
+       #Up dữ liệu lên combobox
         self.combo_giaovien.addItems(self.dsgv)
         self.combo_nhom.addItems(self.dsnhom)
 
@@ -637,10 +685,19 @@ class OpWinM11_confirmldd(Ui_locdiemdanh):
         self.xndiemdanh.clicked.connect(self.but_xndiemdanh)
         self.xoadiemdanh.clicked.connect(self.but_xnxoadd)
         
+        
 
     #Def nút hoàn tất
     def but_hoantat(self):
-        window_1.show()
+
+        #Hoàn tất đã ấn nút thêm học sinh mới 
+        global ui
+        global window_1
+        global window_11
+
+        window_1 = QDialog()
+        ui = OpWinM1_qlhs()
+        ui.setupUi(window_1)
         window_11.hide()
 
 
@@ -1001,6 +1058,8 @@ class OpWinM11_confirmldd(Ui_locdiemdanh):
 
 #Window 1-2 - Dialog thực thi việc thêm học sinh mới
 class OpWinM12_confirmnewstu(Ui_tbwthemhocsinhmoi):
+    #Init
+    
     #Khởi tạo
     def setupUi(self,window_12):
         super().setupUi(window_12)
@@ -1016,14 +1075,27 @@ class OpWinM12_confirmnewstu(Ui_tbwthemhocsinhmoi):
 
         #Show current defined window
         window_12.show()
-        #Đánh dấu đã khởi tạo 
-        global assigned_window_12 
-        assigned_window_12 = True
-        
+
     #Def Nút hoàn tất
     def but_hoantat(self):
-        window_1.show()
+        global window_1
+        global ui
+        global window_12
+
+        window_1 = QDialog()
+        ui = OpWinM1_qlhs()
+        ui.setupUi(window_1)
         window_12.hide()
+
+
+
+
+
+
+
+
+
+
 
     #Mở Dialog thêm học sinh mới
     def but_xacnhan(self):
@@ -1039,6 +1111,8 @@ class OpWinM12_confirmnewstu(Ui_tbwthemhocsinhmoi):
         self.header.setSectionResizeMode(5, QHeaderView.ResizeToContents)
         
         
+
+
         #Chọn Mã học sinh để tạo mã mới
         sortMaHS = "SELECT MaHS FROM dshocsinh;"
         run_cmd(sortMaHS)
@@ -1149,15 +1223,18 @@ class OpWinM13_xoahocsinh(Ui_xoahocsinh):
 
         #Show current defined window
         window_13.show()
-        #Đánh dấu mở lần đầu
-        global assigned_window_13 
-        assigned_window_13 = True
+
 
     #Def nút Hoàn tất
     def but_hoantat(self):
-        window_1.show()
+        global window_1
+        global ui
+        global window_13
+
+        window_1 = QDialog()
+        ui = OpWinM1_qlhs()
+        ui.setupUi(window_1)
         window_13.hide()
-        
 
     #Def nút lọc
     def but_loc(self):
@@ -1276,14 +1353,18 @@ class OpWinM14_thongkediemdanh(Ui_tkdiemdanhhs):
         
         #Show current defined window
         window_14.show()
-        #Đánh dấu mở lần đầu 
-        global assigned_window_14 
-        assigned_window_14 = True
+
 
     #Def nút Hoàn tất
     def Op_hoantat(self):
+        global window_1
+        global ui
+        global window_14
+
+        window_1 = QDialog()
+        ui = OpWinM1_qlhs()
+        ui.setupUi(window_1)
         window_14.hide()
-        window_1.show()
 
     #Def nút lọc
     def Op_loc(self):
@@ -1334,13 +1415,17 @@ class OpWinM16_danhsachhocsinh(Ui_danhsachhs):
 
         #Show current defined window
         window_16.show()
-        #Đánh dấu mở lần đầu 
-        global assigned_window_16 
-        assigned_window_16 = True
+
     #Def nút hoàn tất
     def Op_hoantat(self):
+        global window_1
+        global ui
+        global window_16
+
+        window_1 = QDialog()
+        ui = OpWinM1_qlhs()
+        ui.setupUi(window_1)
         window_16.hide()
-        window_1.show()
 
     #Def nút load danh sách học sinh
     def loaditem(self):
@@ -1471,48 +1556,62 @@ class OpWinM2_qlgv(Ui_quanlygiaovien):
 
         #Show current defined window
         window_2.show()
-        #Đánh dấu lần đầu gọi
-        global assigned_window_2
-        assigned_window_2 = True
+
     #Def nút quay lại
     def ql(self):
+        global ui
+        global MainWinOpt
+        global window_2
+        
+        MainWinOpt = QMainWindow()
+        ui = MainWinOptimized()
+        ui.setupUi(MainWinOpt)
         MainWinOpt.show()
         window_2.hide()
 
+
     #Def nút danh sách giáo viên
     def tbslgvct(self):
-        if assigned_window_21:
-            window_21.show()
-        else:
-            self.ui = OpWinM21_slgvct()
-            self.ui.setupUi(window_21)
+        global ui
+        global window_21
+        global window_2
+
+        window_21 = QDialog()
+        ui = OpWinM21_slgvct()
+        ui.setupUi(window_21)
         window_2.hide()
 
     #Def nút thêm giáo viên
     def themgvbut(self):
-        if assigned_window_22:
-            window_22.show()
-        else:
-            self.ui = OpWinM22_themgv()
-            self.ui.setupUi(window_22)
+        global ui
+        global window_22
+        global window_2
+
+        window_22 = QDialog()
+        ui = OpWinM22_themgv()
+        ui.setupUi(window_22)
         window_2.hide()
 
     #Def nút phân công giáo viên
     def pcgv(self):
-        if assigned_window_23:
-            window_23.show()
-        else:
-            self.ui = OpWinM23_pcgv()
-            self.ui.setupUi(window_23)
+        global ui
+        global window_23
+        global window_2
+
+        window_23 = QDialog()
+        ui = OpWinM23_pcgv()
+        ui.setupUi(window_23)
         window_2.hide()
 
     #Def nút xóa giáo viên
     def xgv(self):
-        if assigned_window_24:
-            window_24.show()
-        else:
-            self.ui = OpWin24_xoagv()
-            self.ui.setupUi(window_24)
+        global ui
+        global window_24
+        global window_2
+
+        window_24 = QDialog()
+        ui = OpWin24_xoagv()
+        ui.setupUi(window_24)
         window_2.hide()
 
 
@@ -1544,14 +1643,19 @@ class OpWinM21_slgvct(Ui_dsgv):
 
         #Show current window
         window_21.show()
-        #Đánh dấu lần đầu gọi
-        global assigned_window_21
-        assigned_window_21 = True
+
 
     #def nút hoàn tất
     def ht(self):
-        window_2.show()
+        global ui
+        global window_2
+        global window_21
+
+        window_2 = QDialog()
+        ui = OpWinM2_qlgv()
+        ui.setupUi(window_2)
         window_21.hide()
+
 
     #def nút lọc giáo viên
     def butloc(self):
@@ -1612,13 +1716,18 @@ class OpWinM22_themgv(Ui_themgv):
 
         #show current window
         window_22.show()
-        #Đánh dấu lần đầu gọi
-        global assigned_window_22
-        assigned_window_22 = True
+
     #Def nút hoàn tất
     def ql(self):
-        window_2.show()
+        global ui
+        global window_2
+        global window_22
+
+        window_2 = QDialog()
+        ui = OpWinM2_qlgv()
+        ui.setupUi(window_2)
         window_22.hide()
+
 
     #Def nút tiến hành thêm giáo viên mới
     def thtgvmoi(self):
@@ -1727,13 +1836,17 @@ class OpWinM23_pcgv(Ui_M23_capnhatxoapc):
 
         #Show window
         window_23.show()
-        #Đánh dấu lần đầu gọi
-        global assigned_window_23
-        assigned_window_23 = True
+
 
     #Def nút quay lại
     def ql(self):
-        window_2.show()
+        global ui
+        global window_2
+        global window_23
+
+        window_2 = QDialog()
+        ui = OpWinM2_qlgv()
+        ui.setupUi(window_2)
         window_23.hide()
 
     #Def khi cập nhật mã phân công
@@ -1905,14 +2018,18 @@ class OpWin24_xoagv(Ui_formxoagv):
 
         #Show window
         window_24.show()
-        #Đánh dấu lần đầu gọi
-        global assigned_window_24
-        assigned_window_24 = True
+
 
 
     #Def nút quay lại
     def ql(self):
-        window_2.show()
+        global ui
+        global window_2
+        global window_24
+
+        window_2 = QDialog()
+        ui = OpWinM2_qlgv()
+        ui.setupUi(window_2)
         window_24.hide()
 
     #Def cập nhật line họ tên giáo viên
@@ -2045,40 +2162,51 @@ class OpWinM3_qlhp(Ui_quanlyhocphi):
 
         #Show current defined window
         window_3.show()
-        #Đánh dấu lần đầu khởi tạo
-        global assigned_window_3
-        assigned_window_3 = True
+
 
     #Def nút quay lại
     def ql(self):
+        global ui
+        global MainWinOpt
+        global window_3
+        
+        MainWinOpt = QMainWindow()
+        ui = MainWinOptimized()
+        ui.setupUi(MainWinOpt)
         MainWinOpt.show()
         window_3.hide()
 
     #Def nút mở window_31
     def Op_xoasuahpdm(self):
-        if assigned_window_31: 
-            window_31.show()
-        else:
-            self.ui = OpWinM31_qlhp()
-            self.ui.setupUi(window_31)
+        global ui
+        global window_3
+        global window_31
+
+        window_31 = QDialog()
+        ui = OpWinM31_qlhp()
+        ui.setupUi(window_31)
         window_3.hide()
 
     #Def nút mở window_32
     def Op_thpdm(self):
-        if assigned_window_32: 
-            window_32.show()
-        else:
-            self.ui = OpWinM32_thpdm()
-            self.ui.setupUi(window_32)
+        global ui
+        global window_3
+        global window_32
+
+        window_32 = QDialog()
+        ui = OpWinM32_thpdm()
+        ui.setupUi(window_32)
         window_3.hide()
 
     #Def nút mở window_33
     def Op_gnth(self):
-        if assigned_window_33: 
-            window_33.show()
-        else:
-            self.ui = OpWinM33_gnthdshp()
-            self.ui.setupUi(window_33)
+        global ui
+        global window_3
+        global window_33
+        
+        window_33 = QDialog()
+        ui = OpWinM33_gnthdshp()
+        ui.setupUi(window_33)
         window_3.hide()
 
 
@@ -2103,9 +2231,7 @@ class OpWinM31_qlhp(Ui_xoahpdm):
 
         #Show current defined window
         window_31.show()
-        #Đánh dấu lần đầu khởi tạo
-        global assigned_window_31
-        assigned_window_31 = True
+
 
     #Def khi cập nhật bảng view
     def Op_enbcapnhat(self):
@@ -2114,8 +2240,14 @@ class OpWinM31_qlhp(Ui_xoahpdm):
 
     #Def nút quay lại
     def finished(self):
+        global window_31
+        global window_3
+        global ui
+        
+        window_3 = QDialog()
+        ui = OpWinM3_qlhp()
+        ui.setupUi(window_3)
         window_31.hide()
-        window_3.show()
 
     #Def nút chuyển số integer thành chuỗi có dot seperate
     def viewnum(self,ipnum):
@@ -2318,14 +2450,18 @@ class OpWinM32_thpdm(Ui_themidhp):
 
         #Hiển thị window 32
         window_32.show()
-        #Đánh dấu lần đầu khởi tạo
-        global assigned_window_32
-        assigned_window_32 = True
+
 
     #Def finished button
     def finished(self):
+        global window_32
+        global window_3
+        global ui
+        
+        window_3 = QDialog()
+        ui = OpWinM3_qlhp()
+        ui.setupUi(window_3)
         window_32.hide()
-        window_3.show()
 
     #Def button xác nhận
     def but_xacnhan(self):
@@ -2532,14 +2668,18 @@ class OpWinM33_gnthdshp(Ui_ghinhanvadshp):
 
         #Show current defined window
         window_33.show()
-        #Đánh dấu lần đầu khởi tạo
-        global assigned_window_33
-        assigned_window_33 = True
+   
 
     #Def nút hoàn tất
     def finished(self):
+        global window_33
+        global window_3
+        global ui
+        
+        window_3 = QDialog()
+        ui = OpWinM3_qlhp()
+        ui.setupUi(window_3)
         window_33.hide()
-        window_3.show()
 
     #Def nút lọc
     def but_loc(self):
@@ -2703,41 +2843,52 @@ class OpWinM4_pmntkb(Ui_phanmonnhomtkb):
 
         #Show current defined window
         window_4.show()
-        #Đánh dấu mở lần đầu
-        global assigned_window_4
-        assigned_window_4 = True
+
 
     #Def nút quay lại
     def ql(self):
+        global ui
+        global MainWinOpt
+        global window_4
+        
+        MainWinOpt = QMainWindow()
+        ui = MainWinOptimized()
+        ui.setupUi(MainWinOpt)
         MainWinOpt.show()
         window_4.hide()
 
     #Def nút mở window thêm xóa nhóm
     def op_lkthemxoanhom(self):
-        if assigned_window_41:
-            window_41.show()
-        else: 
-            self.ui = OpWinM41_lktxnhom()
-            self.ui.setupUi(window_41)
+        global ui
+        global window_4
+        global window_41
+        
+        window_41 = QDialog()
+        ui = OpWinM41_lktxnhom()
+        ui.setupUi(window_41)
         window_4.hide()
 
 
     #Def nút mở window thêm/bớt học sinh vào nhóm
     def op_themxoahs(self):
-        if assigned_window_42:
-            window_42.show()
-        else: 
-            self.ui = OpWinM42_tdtthstn()
-            self.ui.setupUi(window_42)
+        global ui
+        global window_4
+        global window_42
+
+        window_42 = QDialog()
+        ui = OpWinM42_tdtthstn()
+        ui.setupUi(window_42)
         window_4.hide()
 
     #Def nút mở window thay đổi giờ học lịch học
     def op_tdghlh(self):
-        if assigned_window_43:
-            window_43.show()
-        else: 
-            self.ui = OpWinM43_tdghlh()
-            self.ui.setupUi(window_43)
+        global ui
+        global window_4
+        global window_43
+        
+        window_43 = QDialog()
+        ui = OpWinM43_tdghlh()
+        ui.setupUi(window_43)
         window_4.hide()
 
 
@@ -2782,14 +2933,18 @@ class OpWinM41_lktxnhom(Ui_lkthemxoanhom):
 
         #Show current window
         window_41.show()
-        #Đánh dấu mở lần đầu
-        global assigned_window_41
-        assigned_window_41 = True
+  
 
 
     #Def nút hoàn tất
     def ql(self):
-        window_4.show()
+        global ui
+        global window_4
+        global window_41
+
+        window_4 = QDialog()
+        ui = OpWinM4_pmntkb()
+        ui.setupUi(window_4)
         window_41.hide()
 
 
@@ -3089,13 +3244,17 @@ class OpWinM42_tdtthstn(Ui_thaydoitthstrongnhom):
 
         #Hiện window
         window_42.show()
-        #Đánh dấu mở lần đầu
-        global assigned_window_42
-        assigned_window_42 = True
+
 
     #Def nút hoàn tất
     def but_hoantat(self):
-        window_4.show()
+        global ui
+        global window_4
+        global window_42
+
+        window_4 = QDialog()
+        ui = OpWinM4_pmntkb()
+        ui.setupUi(window_4)
         window_42.hide()
 
 
@@ -3265,9 +3424,7 @@ class OpWinM43_tdghlh(Ui_thaydoighlh):
 
         #Hiện window
         window_43.show()
-        #Đánh dấu mở lần đầu
-        global assigned_window_43
-        assigned_window_43 = True
+
 
         #Lệnh chạy cập nhật học sinh trong nhóm
         self.nhom.currentIndexChanged.connect(self.onupdate_nhom)
@@ -3285,7 +3442,13 @@ class OpWinM43_tdghlh(Ui_thaydoighlh):
 
     #Def nút hoàn tất
     def but_hoantat(self):
-        window_4.show()
+        global ui
+        global window_4
+        global window_43
+
+        window_4 = QDialog()
+        ui = OpWinM4_pmntkb()
+        ui.setupUi(window_4)
         window_43.hide()
 
     #Def khi cập nhật lựa chọn nhóm
@@ -3500,40 +3663,51 @@ class OpWinM5_ptln(Ui_phantichloinhuan):
 
         #Show current window
         window_5.show() 
-        #Đánh dấu hiển thị lần đầu
-        global assigned_window_5
-        assigned_window_5 = True
+
 
     #Def nút quay lại
     def ql(self):
+        global ui
+        global MainWinOpt
+        global window_5
+        
+        MainWinOpt = QMainWindow()
+        ui = MainWinOptimized()
+        ui.setupUi(MainWinOpt)
         MainWinOpt.show()
         window_5.hide()
 
     #Def nút mở bảng chi lương giáo viên
     def opbclgv(self):
-        if assigned_window_51:
-            window_51.show()
-        else:
-            self.ui = OpWinM51_bclgv()
-            self.ui.setupUi(window_51)
+        global ui
+        global window_5
+        global window_51
+
+        window_51 = QDialog()
+        ui = OpWinM51_bclgv()
+        ui.setupUi(window_51)
         window_5.hide()
 
     #Def nút mở bảng cập nhật thông tin
     def cntt(self):
-        if assigned_window_52:
-            window_52.show()
-        else:
-            self.ui = OpWinM52_cnttluong()
-            self.ui.setupUi(window_52)
+        global ui
+        global window_5
+        global window_52
+
+        window_52 = QDialog()
+        ui = OpWinM52_cnttluong()
+        ui.setupUi(window_52)
         window_5.hide()
 
     #Def nút mở bảng chi trả lương giáo viên
     def ctlgv(self):
-        if assigned_window_53:
-            window_53.show()
-        else:
-            self.ui = OpWinM53_lctluonggv()
-            self.ui.setupUi(window_53)
+        global ui
+        global window_5
+        global window_53
+
+        window_53 = QDialog()
+        ui = OpWinM53_lctluonggv()
+        ui.setupUi(window_53)
         window_5.hide()
 
 
@@ -3582,9 +3756,7 @@ class OpWinM51_bclgv(Ui_bclgiaovien):
 
         #Show current window
         window_51.show()
-        #Đánh dấu hiển thị lần đầu
-        global assigned_window_51
-        assigned_window_51 = True
+
 
     #Def nút lọc all
     def whilelocall(self):
@@ -3596,7 +3768,13 @@ class OpWinM51_bclgv(Ui_bclgiaovien):
 
     #Def nút quay lại
     def ql(self):
-        window_5.show()
+        global ui
+        global window_5 
+        global window_51
+
+        window_5 = QDialog()
+        ui = OpWinM5_ptln()
+        ui.setupUi(window_5)
         window_51.hide()
 
     #Def nút chuyển số integer thành chuỗi có dot seperate
@@ -3846,14 +4024,17 @@ class OpWinM52_cnttluong(Ui_capnhatttluong):
 
         #Show current window
         window_52.show()
-        #Đánh dấu hiển thị lần đầu
-        global assigned_window_52
-        assigned_window_52 = True
-
+  
 
     #Def nút quay lại
     def ql(self):
-        window_5.show()
+        global ui
+        global window_5 
+        global window_52
+
+        window_5 = QDialog()
+        ui = OpWinM5_ptln()
+        ui.setupUi(window_5)
         window_52.hide()
 
     #Def khi cập nhật mgv để update bậc lương
@@ -4294,13 +4475,17 @@ class OpWinM53_lctluonggv(Ui_chitraluonggv):
 
         #Show current window
         window_53.show()
-        #Đánh dấu hiển thị lần đầu
-        global assigned_window_53
-        assigned_window_53 = True
+
 
     #Def nút quay lại
     def ql(self):
-        window_5.show()
+        global ui
+        global window_5 
+        global window_53
+
+        window_5 = QDialog()
+        ui = OpWinM5_ptln()
+        ui.setupUi(window_5)
         window_53.hide()
 
     #Def chuyển số integer thành chuỗi có dot seperate
@@ -4997,12 +5182,17 @@ class OpWinM6_qlbhgh(Ui_quanlybaihocgiohoc):
 
         #Show current window
         window_6.show()
-        #Đánh dấu hiện thị lần đầu
-        global assigned_window_6
-        assigned_window_6 = True
+   
 
     #Def nút quay lại
     def ql(self):
+        global ui
+        global MainWinOpt
+        global window_6
+        
+        MainWinOpt = QMainWindow()
+        ui = MainWinOptimized()
+        ui.setupUi(MainWinOpt)
         MainWinOpt.show()
         window_6.hide()
 
@@ -5042,40 +5232,51 @@ class OpWinM7_ttphonline(Ui_M7_thongtinlienhephuhuynh):
 
         #Show current window
         window_7.show()
-        #Đánh dấu mở lần đầu
-        global assigned_window_7
-        assigned_window_7 = True
+
 
     #Def nút quay lại
     def ql(self):
+        global ui
+        global MainWinOpt
+        global window_7
+        
+        MainWinOpt = QMainWindow()
+        ui = MainWinOptimized()
+        ui.setupUi(MainWinOpt)
         MainWinOpt.show()
         window_7.hide()
 
     #Def nút thêm xóa cập nhật thông tin phụ huynh
     def txcn(self):
-        if assigned_window_71:
-            window_71.show()
-        else:
-            self.ui = OpWinM71_txcninfoph()
-            self.ui.setupUi(window_71)
+        global ui 
+        global window_7
+        global window_71
+
+        window_71 = QDialog()
+        ui = OpWinM71_txcninfoph()
+        ui.setupUi(window_71)
         window_7.hide()
 
     #Def nút mở window gửi tin nhắn tới học sinh riêng lẻ
     def gtncn(self):
-        if assigned_window_72:
-            window_72.show()
-        else:
-            self.ui = OpWinM72_guitncn()
-            self.ui.setupUi(window_72)
+        global ui 
+        global window_7
+        global window_72
+
+        window_72 = QDialog()
+        ui = OpWinM72_guitncn()
+        ui.setupUi(window_72)
         window_7.hide()
 
     #Def nút mở window gửi tin nhắn học sinh theo nhóm
     def gtntn(self):
-        if assigned_window_73:
-            window_73.show()
-        else:
-            self.ui = OpWinM73_lhhstn()
-            self.ui.setupUi(window_73)
+        global ui 
+        global window_7
+        global window_73
+
+        window_73 = QDialog()
+        ui = OpWinM73_lhhstn()
+        ui.setupUi(window_73)
         window_7.hide()
 
 
@@ -5138,13 +5339,17 @@ class OpWinM71_txcninfoph(Ui_themxoacapnhatinfophuhuynh):
 
         #Show current window
         window_71.show()
-        #Đánh dấu mở lần đầu
-        global assigned_window_71
-        assigned_window_71 = True
+
 
     #Def nút quay lại
     def ql(self):
-        window_7.show()
+        global ui
+        global window_7
+        global window_71
+
+        window_7 = QDialog()
+        ui = OpWinM7_ttphonline()
+        ui.setupUi(window_7)
         window_71.hide()
 
     #Def but lọc
@@ -5409,13 +5614,16 @@ class OpWinM72_guitncn(Ui_guitncn):
 
         #Hiển thị Window 72
         window_72.show()
-        #Đánh dấu mở lần đầu
-        global assigned_window_72
-        assigned_window_72 = True
-
+    
     #def but quay lại
     def ql(self):
-        window_7.show()
+        global ui
+        global window_7
+        global window_72
+
+        window_7 = QDialog()
+        ui = OpWinM7_ttphonline()
+        ui.setupUi(window_7)
         window_72.hide()
     
     #Def khi cập nhật lựa chọn
@@ -5489,13 +5697,17 @@ class OpWinM73_lhhstn(Ui_gtnnhom):
 
         #Hiện window
         window_73.show()
-        #Đánh dấu mở lần đầu
-        global assigned_window_73
-        assigned_window_73 = True
+
 
     #def nút quay lại
     def ql(self):
-        window_7.show()
+        global ui
+        global window_7
+        global window_73
+
+        window_7 = QDialog()
+        ui = OpWinM7_ttphonline()
+        ui.setupUi(window_7)
         window_73.hide()
 
     #Def option chọn nhóm
@@ -5751,45 +5963,46 @@ if __name__ == "__main__":
     import sys
     app = QApplication(sys.argv)
 
-    #Kiểm tra đã khởi tạo
-    assigned_window_1 = False
-    assigned_window_11 = False
-    assigned_window_12 = False
-    assigned_window_13 = False
-    assigned_window_14 = False
-    assigned_window_16 = False
 
-    assigned_window_2 = False
-    assigned_window_21 = False
-    assigned_window_22 = False
-    assigned_window_23 = False
-    assigned_window_24 = False
-
-    assigned_window_3 = False
-    assigned_window_31 = False
-    assigned_window_32 = False
-    assigned_window_33 = False
-
-    assigned_window_4 = False
-    assigned_window_41 = False
-    assigned_window_42 = False
-    assigned_window_43 = False
-
-    assigned_window_5 = False
-    assigned_window_51 = False
-    assigned_window_52 = False
-    assigned_window_53 = False
-
-    assigned_window_6 = False
-    
-    assigned_window_7 = False
-    assigned_window_71 = False
-    assigned_window_72 = False
-    assigned_window_73 = False
-
-    assigned_window_loading = False
 
     #Variables Declaire for Windows Transitions
+    global window_1
+    global window_11
+    global window_12
+    global window_13
+    global window_14
+    global window_16
+    
+    global window_2
+    global window_21
+    global window_22
+    global window_23
+    global window_24
+
+    global window_3
+    global window_31
+    global window_32
+    global window_33
+
+    global window_4
+    global window_41
+    global window_42
+    global window_43
+
+    global window_5
+    global window_51
+    global window_52
+    global window_53
+
+    global window_6
+
+    global window_7
+    global window_71
+    global window_72
+    global window_73
+
+    global window_loading
+
     window_1 = QDialog()
     window_11 = QDialog()
     window_12 = QDialog()
@@ -5830,9 +6043,11 @@ if __name__ == "__main__":
     
 
 
-    #Xử lý bộ nhớ 
 
+    global MainWinOpt
     MainWinOpt = QMainWindow()
+    
+    global ui
     ui = MainWinOptimized()
     ui.setupUi(MainWinOpt)
     MainWinOpt.show()
